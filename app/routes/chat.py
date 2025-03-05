@@ -1,5 +1,5 @@
 import openai
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
 from app.models.chat import ChatHistory
 from app.schemas.chat import ChatRequest, ChatResponse, ChatHistoryResponse
 from app.core.config import settings
@@ -26,7 +26,6 @@ async def send_message(chat_data: ChatRequest):
 
     except Exception as e:
         raise e
-        # raise HTTPException(status_code=500, detail="Ошибка OpenAI")
 
 
 @router.get("/history", response_model=ChatHistoryResponse)

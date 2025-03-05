@@ -1,5 +1,5 @@
-from tortoise import Tortoise, run_async
-from app.core.config import settings, TORTOISE_ORM
+from tortoise import Tortoise
+from app.core.config import TORTOISE_ORM
 
 
 async def init_db():
