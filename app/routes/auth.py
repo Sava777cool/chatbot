@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, HTTPException
 from datetime import timedelta
 from app.models.user import User
 from app.schemas.user import UserCreate, Token

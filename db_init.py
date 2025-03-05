@@ -1,14 +1,14 @@
-from tortoise import Tortoise, fields
-from tortoise.models import Model
+import asyncio
+from tortoise import Tortoise, run_async
 from app.core.config import settings
 
 
-async def init_db():
+async def init():
     await Tortoise.init(
         db_url=settings.DATABASE_URL,
-        modules={
-            "models": ["app.models.user", "app.models.chat", "aerich.models"],
-            "default_connection": "default",
-        },
+        modules={"models": ["app.models.user", "app.models.chat"]},
     )
     await Tortoise.generate_schemas()
+
+
+run_async(init())

@@ -21,7 +21,7 @@ class ChatHistoryItem(BaseModel):
 
     message: str
     response: str
-    timestamp: datetime
+    created_at: datetime
 
 
 class ChatHistoryResponse(BaseModel):
